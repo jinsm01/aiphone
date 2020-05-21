@@ -9,7 +9,7 @@ from time import sleep
 from appium import webdriver
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
-desired_caps['platformVersion'] = '6.0'
+desired_caps['platformVersion'] = '5.0'
 desired_caps['deviceName'] = 'emulator-7555'
 desired_caps['appPackage'] = 'com.xueqiu.android'
 desired_caps['appActivity'] = 'com.xueqiu.android.common.MainActivity'

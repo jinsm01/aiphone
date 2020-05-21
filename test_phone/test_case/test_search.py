@@ -3,6 +3,8 @@
 # @Time : 2020/5/18 14:01 
 # @Author :labixiaoxin
 # @File : test_search.py
+from time import sleep
+
 from appium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -36,6 +38,7 @@ class TestSearch:
         print('search case')
         self.driver.find_element(By.ID, 'com.xueqiu.android:id/tv_search').click()
         self.driver.find_element(By.ID, 'com.xueqiu.android:id/search_input_text').send_keys('阿里巴巴')
-        self.driver.find_element(By.XPATH, '//*[@resource-id="com.xueqiu.android:id/name" and @text="阿里巴巴"]').click()
+        # self.driver.find_element(By.XPATH, '//*[@resource-id="com.xueqiu.android:id/stockName" and @text="阿里巴巴"]').click()
         curr_price = self.driver.find_element(By.ID, 'com.xueqiu.android:id/current_price').text
+        print(curr_price)
         assert float(curr_price) > 200
