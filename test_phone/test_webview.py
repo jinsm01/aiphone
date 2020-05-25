@@ -17,8 +17,10 @@ class TestBrowser:
         des_caps['platformName'] = 'Android'
         des_caps['platformVersion'] = '6.0'
         des_caps['deviceName'] = 'emulator-7555'
-        des_caps['browserName'] = 'Browser'
+        des_caps['browserName'] = 'browser'
+        des_caps['chromedriverChromeMappingFile'] = r'E:\xuexi\aiphone\test_phone\mapping.json'
         des_caps['noReset'] = True
+
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', des_caps)
 
         self.driver.implicitly_wait(10)
