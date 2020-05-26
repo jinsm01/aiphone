@@ -22,4 +22,5 @@ class AddMembers(BasePage):
         return AddMenus(self.driver)
 
     def get_toast(self):
-        return self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成功"]').text
+        # return self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成功"]').text
+        return self.find(MobileBy.XPATH, "//*[@class='android.widget.Toast']").text

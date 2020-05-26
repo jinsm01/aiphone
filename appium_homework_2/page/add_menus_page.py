@@ -4,13 +4,13 @@
 # @Author  : shaonianlang
 # @File    : add_menus_page.py
 from appium.webdriver.common.mobileby import MobileBy
-
 from appium_homework_2.page.base_page import BasePage
+
 
 
 class AddMenus(BasePage):
     def input_name(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys('封装')
+        self.driver.find_element(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys('33334444')
         return self
 
     def select_gender(self):
@@ -19,7 +19,7 @@ class AddMenus(BasePage):
         return self
 
     def input_numbers(self):
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys('18769976899')
+        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys('18789255899')
         return self
 
     def save_button(self):
