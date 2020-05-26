@@ -4,7 +4,6 @@
 # @Author  : shaonianlang
 # @File    : test_object_weixin.py
 from appium_homework_2.page.app import APP
-from appium_homework_2.page.base_page import BasePage
 
 
 class TestWeiXin:
@@ -21,5 +20,8 @@ class TestWeiXin:
         print(result)
         assert result == '添加成功'
 
-    # def test_delete_member(self):
-    #     pass
+    def test_delete_member(self):
+        before_num = self.main.goto_adressbook().get_all_members()
+        self.main.goto_adressbook().select_member().other_button().edit_member().delete_button()
+        after_num = self.main.goto_adressbook().get_all_members()
+        assert after_num == before_num - 1
