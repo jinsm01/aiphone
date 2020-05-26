@@ -11,12 +11,12 @@ from appium_homework_2.page.app import APP
 
 
 class TestWeiXin:
-    def setup_class(self):
+    def setup(self):
         self.app = APP()
         self.main = self.app.start_app().main_windows()
 
-    def teardown_class(self):
-        self.app.stop_app()
+    # def teardown(self):
+    #     self.app.stop_app()
 
     @pytest.mark.parametrize('name,number', [("123", "13388866656"), ("1234567", "13900000008")])
     def test_add_member(self, name, number):
