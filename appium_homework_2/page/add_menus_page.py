@@ -9,8 +9,8 @@ from appium_homework_2.page.base_page import BasePage
 
 
 class AddMenus(BasePage):
-    def input_name(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys('33334444')
+    def input_name(self, name):
+        self.driver.find_element(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys(name)
         return self
 
     def select_gender(self):
@@ -18,8 +18,8 @@ class AddMenus(BasePage):
         self.driver.find_element(MobileBy.XPATH, '//*[@text="女"]').click()
         return self
 
-    def input_numbers(self):
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys('18789255899')
+    def input_numbers(self, number):
+        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys(number)
         return self
 
     def save_button(self):

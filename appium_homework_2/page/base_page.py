@@ -8,7 +8,6 @@ import logging
 from appium.webdriver import WebElement
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
-from selenium.webdriver.common.by import By
 
 
 class BasePage:
