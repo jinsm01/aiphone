@@ -18,7 +18,7 @@ class MainPage(BasePage):
 
     # 跳转到通讯录
     def goto_adressbook(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="通讯录"]').click()
         return AdressBook(self.driver)
 
     def goto_workbench(self):

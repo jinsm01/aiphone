@@ -11,5 +11,5 @@ from appium_homework_2.page.edit_member_page import EditMember
 
 class PersonalInfoOther(BasePage):
     def edit_member(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="编辑成员"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="编辑成员"]').click()
         return EditMember(self.driver)

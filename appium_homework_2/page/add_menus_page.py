@@ -10,19 +10,19 @@ from appium_homework_2.page.base_page import BasePage
 
 class AddMenus(BasePage):
     def input_name(self, name):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys(name)
+        self.find(MobileBy.XPATH, '//*[@text="姓名　"]/..//*[@text="必填"]').send_keys(name)
         return self
 
     def select_gender(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="男"]').click()
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="女"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="男"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="女"]').click()
         return self
 
     def input_numbers(self, number):
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys(number)
+        self.find(MobileBy.ID, 'com.tencent.wework:id/eqx').send_keys(number)
         return self
 
     def save_button(self):
         from appium_homework_2.page.add_members_page import AddMembers
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="保存"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="保存"]').click()
         return AddMembers(self.driver)

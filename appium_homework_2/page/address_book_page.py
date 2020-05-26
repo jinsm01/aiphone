@@ -19,7 +19,7 @@ class AdressBook(BasePage):
         return AddMembers(self.driver)
 
     def select_member(self, selename):
-        self.driver.find_element(MobileBy.XPATH, f'//*[@text="{selename}"]').click()
+        self.find(MobileBy.XPATH, f'//*[@text="{selename}"]').click()
         return PersonalInfo(self.driver)
 
     def get_all_members(self):

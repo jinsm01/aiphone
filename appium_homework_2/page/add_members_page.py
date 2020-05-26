@@ -18,9 +18,9 @@ class AddMembers(BasePage):
     # 点击手动添加方式
     def add(self):
         from appium_homework_2.page.add_menus_page import AddMenus
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="手动输入添加"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="手动输入添加"]').click()
         return AddMenus(self.driver)
 
     def get_toast(self):
-        # return self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成功"]').text
+        # return self.find(MobileBy.XPATH, '//*[@text="添加成功"]').text
         return self.find(MobileBy.XPATH, "//*[@class='android.widget.Toast']").text

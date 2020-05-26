@@ -11,5 +11,5 @@ from appium_homework_2.page.personal_info_other_page import PersonalInfoOther
 
 class PersonalInfo(BasePage):
     def other_button(self):
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/gvd').click()
+        self.find(MobileBy.ID, 'com.tencent.wework:id/gvd').click()
         return PersonalInfoOther(self.driver)

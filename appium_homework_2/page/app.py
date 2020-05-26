@@ -27,6 +27,7 @@ class APP(BasePage):
         return self
 
     def stop_app(self):
+        self.driver.quit()
         return self
 
     # 进入主页面
