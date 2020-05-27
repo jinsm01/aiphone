@@ -5,20 +5,32 @@
 # @File    : base_page.py
 import yaml
 from appium.webdriver.webdriver import WebDriver
+from selenium.webdriver.common.by import By
 
 
 class BasePage:
     _driver: WebDriver
+    _back_list = [(By.ID, "iv_close")]
 
     def __init__(self, driver: WebDriver = None):
         self._driver = driver
 
-    # 元素查找
+    # 元素查找，通用方法封装
     def find(self, locator, value: str = None):
-        if isinstance(locator, tuple):
-            return self._driver.find_element(*locator)
-        else:
-            return self._driver.find_element(locator, value)
+        try:
+            if isinstance(locator, tuple):
+                element = self._driver.find_element(*locator)
+            else:
+                element = self._driver.find_element(locator, value)
+            return element
+        except:
+            for black in self._back_list:
+                element = self._driver.find_elements(*black)
+                if len(element) > 0:
+                    element[0].click()
+                    break
+            return self.find(locator, value)
+
 
     # 步骤解析
     def steps(self, path):

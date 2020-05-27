@@ -18,3 +18,7 @@ class TestMain:
     def test_main(self):
         app = App()
         app.start().main().goto_search()
+
+    def test_window(self):
+        app = App()
+        app.start().main().goto_window()
