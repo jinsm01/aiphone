@@ -3,6 +3,7 @@
 # @Time    : 2020/5/27 13:39
 # @Author  : shaonianlang
 # @File    : app.py
+import yaml
 from appium import webdriver
 
 from UI测试框架.page.base_page import BasePage
@@ -23,6 +24,7 @@ class App(BasePage):
             caps['appPackage'] = self._appPackage
             caps['appActivity'] = self._appActivity
             caps['noReset'] = True
+            caps['udid'] = yaml.safe_load(open("../page/configuration.yaml"))['caps']['udid']
             self._driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
             self._driver.implicitly_wait(3)
         else:
