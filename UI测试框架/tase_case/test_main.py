@@ -5,7 +5,6 @@
 # @File    : test_main.py
 from UI测试框架.page.app import App
 
-
 class TestMain:
 
     def test_main(self):

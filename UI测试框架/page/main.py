@@ -10,4 +10,6 @@ from UI测试框架.page.base_page import BasePage
 
 class Main(BasePage):
     def goto_search(self):
-        self.find(By.ID, 'tv_search').click()
+        # 步骤驱动调用点击
+        # self.find(By.ID, 'tv_search').click()
+        self.steps("../page/main.yaml")
